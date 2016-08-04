@@ -34,16 +34,16 @@ $sift = new SiftApi('api_key', 'api_secret', $client);
 
 ## Methods
 - [discovery](#discovery)
-- [addUser](#addUser)
-- [deleteUser](#deleteUser)
-- [getEmailConnections](#getEmailConnections)
-- [addEmailConnection](#addEmailConnection)
-- [deleteEmailConnection](#deleteEmailConnection)
-- [getSifts](#getSifts)
-- [getSift](#getSift)
-- [getConnectToken](#getConnectToken)
-- [getConnectEmailUrl](#getConnectEmailUrl)
-- [sendFeedback](#sendFeedback)
+- [addUser](#adduser)
+- [deleteUser](#deleteuser)
+- [getEmailConnections](#getemailconnections)
+- [addEmailConnection](#addemailconnection)
+- [deleteEmailConnection](#deleteemailconnection)
+- [getSifts](#getsifts)
+- [getSift](#getsift)
+- [getConnectToken](#getconnecttoken)
+- [getConnectEmailUrl](#getconnectemailurl)
+- [sendFeedback](#sendfeedback)
 
 #### discovery
 Returns the parsed eml file as described
@@ -143,7 +143,7 @@ Adds a new email connection to the user account.
 ##### Parameters
 - `$username`: `String` The username of the user to add the email connection to.
 - `$connection`: `Easilydo\EmailConnections\Connection` The connection to be
-added. Valid connection types can be found [here](#Connections).
+added. Valid connection types can be found [here](#connections).
 
 ##### Throws
 - `Easilydo\Exceptions\SiftApiException` if `$connection` is not an instance of
@@ -314,3 +314,41 @@ try {
 
 $result = $response['result'];
 ```
+## Connections
+- [ExchangeConnection](#exchangeconnection)
+- [GoogleConnection](#googleconnection)
+- [ImapConnection](#imapconnection)
+- [MicrosoftConnection](#microsoftconnection)
+- [YahooConnection](#yahooconnection)
+
+### ExchangeConnection
+##### Parameters
+- `$emailAddress`: `String` Email address for the Exchange account
+- `$password`: `String` Password for the Exchange account
+- `$host`: `String` Host for the Exchange account (Optional)
+- `$account`: `String` Username for the Exchange account (Optional)
+
+### GoogleConnection
+##### Parameters
+- `$emailAddress`: `String` The email address associated with the Google account
+- `$refreshToken`: `String` The refresh token for the OAuth2 connection
+
+### ImapConnection
+##### Parameters
+- `$emailAddress`: `String` The email address for the IMAP account
+- `$password`: `String` The password for the IMAP account
+- `$host`: `String` The host for the IMAP account
+
+### MicrosoftConnection
+##### Parameters
+- `$emailAddress`: `String` The email address associated with the Live account
+- `$refreshToken`: `String` The refresh token for the OAuth2 connection
+- `$redirectUri`: `String` The redirect URI that was used for the OAuth2
+connection
+
+### YahooConnection
+##### Parameters
+- `$account`: `String` The Yahoo GUID associated with the user’s Yahoo account
+- `$refreshToken`: `String` The refresh token for the OAuth2 connection
+- `$redirectUri`: `String` The redirect URI that was used for the OAuth2
+connection
