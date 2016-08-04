@@ -1,0 +1,24 @@
+{
+    "name": "easilydo/sift-php-sdk",
+    "description": "A PHP wrapper around Sift API",
+    "type": "library",
+    "require": {
+        "php": "^5.4|^7.0",
+        "guzzlehttp/guzzle": "^6.0"
+    },
+    "require-dev": {
+        "phpspec/phpspec": "^2.0",
+        "mockery/mockery": "@stable",
+        "phpmd/phpmd" : "@stable"
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "Easilydo\\": "src/Easilydo/"
+        }
+    }
+}
