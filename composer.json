@@ -2,6 +2,14 @@
     "name": "easilydo/sift-php-sdk",
     "description": "A PHP wrapper around Sift API",
     "type": "library",
+    "authors": [
+        {
+            "name": "Easilydo",
+            "email": "production@easilydo.com",
+            "homepage": "https://sift.easilydo.com",
+            "role": "Developer"
+        }
+    ],
     "require": {
         "php": "^5.4|^7.0",
         "guzzlehttp/guzzle": "^6.0"
