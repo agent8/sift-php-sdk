@@ -227,7 +227,7 @@ class SiftApi
         ];
 
         if (count($domains) > 0) {
-            $params['domains'] = $domains;
+            $params['domains'] = implode(',', $domains);
         }
 
         return $this->request('GET', "/v1/users/$username/sifts", $params);
@@ -242,9 +242,13 @@ class SiftApi
      * @throws Easilydo\Exceptions\SiftRequestException
      * @return array The json_decoded response body
      */
-    public function getSift($username, $siftId)
+    public function getSift($username, $siftId, $includeEml = false)
     {
-        return $this->request('GET', "/v1/users/$username/sifts/$siftId");
+        $params = [];
+        if ($includeEml) {
+            $params['include_eml'] = 1;
+        }
+        return $this->request('GET', "/v1/users/$username/sifts/$siftId", $params);
     }
 
     /**
