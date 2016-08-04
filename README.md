@@ -1,1 +1,2 @@
-# Sift PHP SDK
+# sift-php-sdk
+PHP SDK for Sift API
