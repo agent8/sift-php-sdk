@@ -167,9 +167,14 @@ class SiftApi
      * @throws Easilydo\Exceptions\SiftRequestException
      * @return array The json_decoded response body
      */
-    public function getEmailConnections($username, $limit = 100, $offset = 0)
+    public function getEmailConnections($username, $limit = 100, $offset = 0, $includeInvalid = false)
     {
-        return $this->request('GET', "/v1/users/$username/email_connections", ['limit' => $limit, 'offset' => $offset]);
+        $params = ['limit' => $limit, 'offset' => $offset];
+        if ($includeInvalid) {
+            $params['include_invalid'] = 1
+        }
+
+        return $this->request('GET', "/v1/users/$username/email_connections", $params);
     }
 
     /**
