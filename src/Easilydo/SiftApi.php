@@ -171,7 +171,7 @@ class SiftApi
     {
         $params = ['limit' => $limit, 'offset' => $offset];
         if ($includeInvalid) {
-            $params['include_invalid'] = 1
+            $params['include_invalid'] = 1;
         }
 
         return $this->request('GET', "/v1/users/$username/email_connections", $params);
